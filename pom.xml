@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.got5</groupId>
 	<artifactId>tapestry5-jquery-upload</artifactId>
-	<version>4.2.0.SATAGO</version>
+	<version>4.2.0-SATAGO</version>
 	<packaging>jar</packaging>
 	<name>Tapestry 5 Ajax Upload Library</name>
 	<description>Upload Component Library for Tapestry 5.4</description>
