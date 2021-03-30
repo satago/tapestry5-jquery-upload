@@ -2,9 +2,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.got5</groupId>
+	<groupId>net.satago</groupId>
 	<artifactId>tapestry5-jquery-upload</artifactId>
-	<version>4.2.0-SATAGO</version>
+	<version>4.2.0.0-SATAGO</version>
 	<packaging>jar</packaging>
 	<name>Tapestry 5 Ajax Upload Library</name>
 	<description>Upload Component Library for Tapestry 5.4</description>
@@ -172,7 +172,17 @@
 					</execution>
 				</executions>
 			</plugin>
-
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.3</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>satago</serverId>
+					<nexusUrl>https://nexus.satago.net/repository/maven-local-libs-release/</nexusUrl>
+					<autoReleaseAfterClose>false</autoReleaseAfterClose>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>com.mycila</groupId>
 				<artifactId>license-maven-plugin</artifactId>
@@ -335,6 +345,12 @@
 			<url>https://maven.springframework.org/release</url>
 		</pluginRepository>
 	</pluginRepositories>
+	<distributionManagement>
+		<repository>
+			<id>satago</id>
+			<url>https://nexus.satago.net/repository/maven-local-libs-release/</url>
+		</repository>
+	</distributionManagement>
 	<profiles>
 		<profile>
 			<id>mac-os-test</id>
